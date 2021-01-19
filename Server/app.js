@@ -44,7 +44,7 @@ var vector = {
 
 // set the server to answer for modbus requests
 const ip = "127.0.0.1";
-const port = 502;
+const port = 8502;
 console.log("ModbusTCP listening on modbus://"+ip+":"+port);
 var serverTCP = new ModbusRTU.ServerTCP(vector, { host: ip, port: port, debug: true, unitID: 1 });
 

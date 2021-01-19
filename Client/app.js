@@ -4,7 +4,7 @@ var client = new ModbusRTU();
 
 // open connection to a tcp line
 const serverIp = "10.20.86.206";
-const port = 502;
+const port = 8502;
 client.connectTCP(serverIp, { port: port });
 client.setID(1);
 
