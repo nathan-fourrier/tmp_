@@ -1,7 +1,5 @@
 // create an empty modbus client
 var ModbusRTU = require("modbus-serial");
-
-
 var vector = {
     getInputRegister: function(addr, unitID) {
         // Synchronous handling
@@ -45,10 +43,10 @@ var vector = {
 };
 
 // set the server to answer for modbus requests
-const servIP = "127.0.0.1";
-const servPort = 8502;
-console.log("ModbusTCP listening on modbus: "+servIP+":"+servPort);
-var serverTCP = new ModbusRTU.ServerTCP(vector, { host: servIP, port: servPort, debug: true, unitID: 1 });
+const ip = "127.0.0.1";
+const port = 502;
+console.log("ModbusTCP listening on modbus://"+ip+":"+port);
+var serverTCP = new ModbusRTU.ServerTCP(vector, { host: ip, port: port, debug: true, unitID: 1 });
 
 serverTCP.on("socketError", function(err){
     // Handle socket error if needed, can be ignored
